@@ -7,7 +7,6 @@ function createDivs() {
         newDiv.classList.add("divs");
         container.appendChild(newDiv);
     }
-
 }
 
 function main() {
