@@ -35,9 +35,14 @@ function askForGridSize() {
 
 function getGridSizeFromUser() {
     let newGridSize;
-    
+
     do {
         newGridSize = prompt("Please enter the grid size (e.g., 16 for a 16x16 grid. (max. 100)): ");
+        
+        if (newGridSize === null) {
+            return;
+        }
+        
         newGridSize = parseInt(newGridSize, 10);
 
         if (isNaN(newGridSize) || newGridSize <= 0) {
