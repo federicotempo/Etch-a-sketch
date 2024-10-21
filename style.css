@@ -1,21 +1,25 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, body {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    height: 100vh;
 }
 
 .divs {
-    width: 20px;
-    height: 20px;
-    border: solid white 1px;
-    background-color: black;
+    width: calc(min(100vw, 100vh)/16);
+    height: calc(min(100vh, 100vw)/16);
+    border: solid black 1px;
 }
 
 #container {
     display: flex;
     flex-wrap: wrap;
-    width: 352px;
-    height: 352px;
+    width: min(100vw, 100vh);
+    height: min(100vh, 100vw);
 }
