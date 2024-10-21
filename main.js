@@ -21,6 +21,12 @@ function changeDivColor(div) {
     }
 }
 
+
+const resetButton = document.querySelector("#reset-button");
+resetButton.addEventListener("click", () => {
+    location.reload();
+})
+
 function main() {
     createDivs();
 }
