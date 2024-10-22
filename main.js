@@ -58,11 +58,17 @@ function getGridSizeFromUser() {
     if (newGridSize) {
         changeGridSize(newGridSize);
     }
-
 }
 
+function deleteGrid() {
+    const container = document.querySelector("#container");
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+}
 
 function changeGridSize(newGridSize) {
+    deleteGrid();
     createGrid(newGridSize);
 }
 
