@@ -67,9 +67,16 @@ function deleteGrid() {
     }
 }
 
+function changeGridSizeText(newGridSize) {
+    const gridSizeText = document.querySelector("label");
+    gridSizeText.innerText = `Actual grid size is: ${newGridSize}` +
+    `x${newGridSize}`;
+}
+
 function changeGridSize(newGridSize) {
     deleteGrid();
     createGrid(newGridSize);
+    changeGridSizeText(newGridSize);
 }
 
 function main() {
