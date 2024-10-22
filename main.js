@@ -1,10 +1,14 @@
 
-function createDivs() {
+function createGrid(gridSize = 16) {
     const container = document.querySelector("#container");
+    const containerWidth = 600;
+    const containerHeight = 600;
 
-    for (let i = 0; i < 256; i++) {
+    for (let i = 0; i < gridSize * gridSize; i++) {
         const newDiv = document.createElement("div");
         newDiv.classList.add("divs");
+        newDiv.style.width = `${(containerWidth / gridSize)}` + 'px';
+        newDiv.style.height = `${(containerHeight / gridSize)}` + 'px';
         newDiv.style.backgroundColor = originalDivColor;
         newDiv.addEventListener("click", () => changeDivColor(newDiv));
         container.appendChild(newDiv);
@@ -38,11 +42,11 @@ function getGridSizeFromUser() {
 
     do {
         newGridSize = prompt("Please enter the grid size (e.g., 16 for a 16x16 grid. (max. 100)): ");
-        
+
         if (newGridSize === null) {
             return;
         }
-        
+
         newGridSize = parseInt(newGridSize, 10);
 
         if (isNaN(newGridSize) || newGridSize <= 0) {
@@ -51,12 +55,21 @@ function getGridSizeFromUser() {
 
     } while (isNaN(newGridSize) || newGridSize <= 0);
 
+    if (newGridSize) {
+        changeGridSize(newGridSize);
+    }
+
+}
+
+
+function changeGridSize(newGridSize) {
+    createGrid(newGridSize);
 }
 
 function main() {
     reset();
-    askForGridSize(); 
-    createDivs();
+    askForGridSize();
+    createGrid();
 }
 
 const originalDivColor = "white";

@@ -17,8 +17,6 @@ html, body {
 }
 
 .divs {
-    width: 37.5px;
-    height: 37.5px;
     border: 1px dotted black ;
     transition: background-color 0.3s;
 }
