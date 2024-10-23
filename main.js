@@ -1,8 +1,8 @@
 
 function createGrid(gridSize = 16) {
     const container = document.querySelector("#container");
-    const containerWidth = 600;
-    const containerHeight = 600;
+    const containerWidth = 400;
+    const containerHeight = 400;
 
     for (let i = 0; i < gridSize * gridSize; i++) {
         const newDiv = document.createElement("div");
